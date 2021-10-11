@@ -23,8 +23,6 @@ public class HW1 {
 
         difference = counter(numbs, firstDigit, difference);
 
-        // System.out.println("diff: " + difference);
-
         printResult(firstDigit, secondDigit, difference, n);
 
     }
@@ -44,27 +42,28 @@ public class HW1 {
             return difference;
         }
 
-        int[] new_numbs = new int[numbs.length - 2];
+        int[] new_numbs;
 
         if (numbs[0] == numbs[1]) {
             if (numbs[0] == firstDigit)
-                difference++;
+                difference += 2;
             else
-                difference--;
+                difference -= 2;
         }
 
         //System.arraycopy(numbs, 2, new_numbs, 0, new_numbs.length);
         new_numbs = Arrays.copyOfRange(numbs, 2, numbs.length);
         return counter(new_numbs, firstDigit, difference);
 
-
     }
 
 
     private static void printResult(int firstDigit, int secondDigit, int difference, int length) {
 
-        if (0 < difference) {
+        //difference = (length + Math.abs(difference)) / 2;
+        //System.out.println("diff: " + difference);
 
+        if (0 < difference) {
             System.out.println(firstDigit + " " + ((length + difference) / 2));
         }
 
