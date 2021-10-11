@@ -1,5 +1,6 @@
 //package HW1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -20,7 +21,7 @@ public class HW1 {
 
         int difference = 0;
 
-        difference = counter(numbs, firstDigit, secondDigit, difference);
+        difference = counter(numbs, firstDigit, difference);
 
         // System.out.println("diff: " + difference);
 
@@ -28,9 +29,13 @@ public class HW1 {
 
     }
 
-    private static int counter(int[] numbs, int firstDigit, int secondDigit, int difference) {
+    private static int counter(int[] numbs, int firstDigit, int difference) {
 
-        if (numbs.length == 1){
+        if (numbs.length < 2){
+
+            if (numbs.length == 0)
+                return difference;
+
             if (numbs[0] == firstDigit)
                 difference++;
             else
@@ -48,8 +53,9 @@ public class HW1 {
                 difference--;
         }
 
-        System.arraycopy(numbs, 2, new_numbs, 0, new_numbs.length);
-        return counter(new_numbs, firstDigit, secondDigit, difference);
+        //System.arraycopy(numbs, 2, new_numbs, 0, new_numbs.length);
+        new_numbs = Arrays.copyOfRange(numbs, 2, numbs.length);
+        return counter(new_numbs, firstDigit, difference);
 
 
     }
