@@ -1,4 +1,4 @@
-package HW1;
+//package HW1;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -27,18 +27,17 @@ public class HW1Ver2 {
 
     private static int counter(int firstDigit, int difference, int... numbs) {
 
-
         switch (numbs.length){
             case 0:
-                pr("0: ");
                 return difference;
 
             case 1:
-                pr("1: ");
+                // pr("1: ");
                 if (numbs[0] == firstDigit)
                     difference++;
                 else
                     difference--;
+                return difference;
 
             case 2:
                 if (numbs[0] == numbs[1]) {
@@ -47,10 +46,16 @@ public class HW1Ver2 {
                     else
                         difference -= 2;
                 }
+                pr(Arrays.toString(numbs) + " : " + difference);
+                return difference;
 
             default:
                 for (int i = 0; i < numbs.length; i += 2) {
-                    difference += counter(firstDigit, difference, numbs[0], numbs[1]);
+                    if (i + 1 < numbs.length)
+                        difference = counter(firstDigit, difference, numbs[i], numbs[i + 1]);
+                    else
+                        difference = counter(firstDigit, difference, numbs[i]);
+                    pr("diff: " + difference);
                 }
 
         }
@@ -75,7 +80,7 @@ public class HW1Ver2 {
     }
 
     static void pr(String toBePrinted){
-        System.out.println(toBePrinted);
+        //System.out.println(toBePrinted);
     }
 
 }
