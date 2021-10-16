@@ -1,4 +1,4 @@
-package HW1;
+//package HW1;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -33,6 +33,7 @@ public class HW1Ver4 {
     }
 
     private static int counter(int firstDigit, int difference, int... numbs) {
+        //System.out.println(difference + ": " + Arrays.toString(numbs));
 
         switch (numbs.length){
             case 0:
@@ -57,8 +58,10 @@ public class HW1Ver4 {
 
             default:
 
-                int[] firstHalf = Arrays.copyOfRange(numbs, 1, numbs.length / 2);
-                int[] secondHalf = Arrays.copyOfRange(numbs, numbs.length / 2 + 1, numbs.length);
+                int[] firstHalf = Arrays.copyOfRange(numbs, 0, numbs.length / 2);
+                int[] secondHalf = Arrays.copyOfRange(numbs, numbs.length / 2, numbs.length);
+
+                //System.out.println(difference + ": " + Arrays.toString(firstHalf) + " + " + Arrays.toString(secondHalf));
 
                 difference = counter(firstDigit, difference, firstHalf)
                            + counter(firstDigit, difference, secondHalf);
