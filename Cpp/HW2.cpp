@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 int main()
 {
 
@@ -12,7 +11,6 @@ int main()
     for (size_t i = 0; i < t; i++)
     {
 
-        int cou = 0;
         int n;
         cin >> n;
         int arr[n];
@@ -21,7 +19,20 @@ int main()
             cin >> arr[i];
         }
 
-        cout << cou;
+        int cou = n;
+
+        for (size_t i = 0; i < n - 1; i++)
+        {
+            for (size_t j = i + 1; j < n; j++)
+            {
+                if(arr[i] == arr[j]){
+                    cou++;
+                }
+            }
+        }
+
+        cout << cou << "\n";
+
+        
     }
-    
 }
