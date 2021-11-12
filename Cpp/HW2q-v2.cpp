@@ -30,6 +30,7 @@ int main()
         {
             cout << a[i] << " ";
         }
+        cout << "\na[0] - 1 == " << a[0] - 1 << "\n";
   
 
         int sorted[max];
@@ -49,12 +50,14 @@ int main()
 */
         int counter = 0;
 
-        printf("counting: ");
+        //printf("\ncounting: ");
+        cout << "\na[0] - 1 == " << a[0] - 1 << "\n";
         for (size_t i = 0; i < n; i++)
         {
             cout << a[i] - 1 << " ";
             sorted[a[i] - 1] += 1;
         }
+        cout << "\na[0] - 1 == " << a[0] - 1 << "\n";
 
         
         printf("\nsorted: ");
