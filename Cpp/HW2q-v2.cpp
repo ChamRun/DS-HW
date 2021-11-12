@@ -24,34 +24,43 @@ int main()
                 max = a[i];
             }
         }
-
+/*
         printf("a: ");
         for (size_t i = 0; i < n; i++)
         {
             cout << a[i] << " ";
         }
-        
+  */      
 
-        int sorted[max + 1];
+        int sorted[max];
 
 
         for (size_t i = 0; i < n; i++)
         {
-            sorted[a[i]] = 0;
+            sorted[i] = 0;
         }
 
+/*
         printf("\nsorted: ");
-        for (size_t i = 0; i <= max; i++)
+        for (size_t i = 0; i < max; i++)
         {
             cout << sorted[i] << " ";
         }
-
-        int counter = n;
+*/
+        int counter = 0;
 
         for (size_t i = 0; i < n; i++)
         {
-            sorted[a[i]]++;
+            sorted[a[i] - 1]++;
         }
+        
+        /*
+        printf("\nsorted: ");
+        for (size_t i = 0; i < max; i++)
+        {
+            cout << sorted[i] << " ";
+        }
+        */
 
 
         for (size_t i = 0; i < max; i++)
@@ -60,6 +69,7 @@ int main()
         }
         
 
-        cout << "\n\nans: " << counter << "\n";
+        //cout << "\n\nans: " << counter << "\n";
+        cout << counter;
     }
 }
