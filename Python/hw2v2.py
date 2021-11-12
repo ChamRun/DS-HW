@@ -20,7 +20,7 @@ if __name__ == '__main__':
             # print("number == " + str(number) + ", new_list[number] == " + str(new_list[number]))
             new_list[number - 1] += 1
 
-        print("new_list == " + str(new_list))
+        # print("new_list == " + str(new_list))
 
         counter = 0
         for j in range(the_max):
