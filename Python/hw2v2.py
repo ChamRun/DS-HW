@@ -27,4 +27,5 @@ if __name__ == '__main__':
             counter += ((1 + new_list[j]) * new_list[j]) / 2
 
         counter = math.trunc(counter)
-        print("ans: " + str(counter))
+        # print("ans: " + str(counter))
+        print(str(counter))
