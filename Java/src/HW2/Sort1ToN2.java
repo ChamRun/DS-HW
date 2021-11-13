@@ -12,9 +12,15 @@ public class Sort1ToN2 {
         for (i=0; i < n; i++)
             count[i] = 0;
 
+
+        System.out.println("c9:\t" + Arrays.toString(count));
+
         // Store count of occurrences in count[]
-        for (i = 0; i < n; i++)
-            count[ (arr[i]/exp)%n ]++;
+        System.out.println("exp: " + exp);
+        for (i = 0; i < n; i++) {
+            System.out.println("DD: " + (arr[i] / exp) + "\nD: " + (arr[i] / exp) % n);
+            count[(arr[i] / exp) % n]++;
+        }
 
         System.out.println("c0:\t" + Arrays.toString(count));
         // Change count[i] so that count[i] now contains actual
