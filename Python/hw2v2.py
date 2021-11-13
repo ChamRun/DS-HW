@@ -9,7 +9,7 @@ if __name__ == '__main__':
         the_max = max(a)
 
         new_list = []
-        for j in range(the_max):
+        for j in range(the_max + 1):
             new_list.append(0)
 
         # print(a)
@@ -18,12 +18,12 @@ if __name__ == '__main__':
 
         for number in a:
             # print("number == " + str(number) + ", new_list[number] == " + str(new_list[number]))
-            new_list[number - 1] += 1
+            new_list[number] += 1
 
         # print("new_list == " + str(new_list))
 
         counter = 0
-        for j in range(the_max):
+        for j in range(the_max + 1):
             counter += ((1 + new_list[j]) * new_list[j]) / 2
 
         counter = math.trunc(counter)
