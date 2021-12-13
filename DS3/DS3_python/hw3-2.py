@@ -1,3 +1,5 @@
+from binarytree import build
+
 INT_MIN = -2 ** 32
 
 
@@ -66,6 +68,12 @@ def insert(tree_root: Node, new):
 
 
 if __name__ == '__main__':
+
+    my_list = [10, 15, 19, 21, 20, 30, 14, 36, 5, 11, 9, 6, 2, 10, 7]
+    my_tree = build(my_list)
+    print(my_tree)
+    exit()
+
 
 
     """

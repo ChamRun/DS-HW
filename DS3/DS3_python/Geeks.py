@@ -1,5 +1,6 @@
 # Python program to find maximumpath sum between two leaves
 # of a binary tree
+from binarytree import build
 
 INT_MIN = -2**32
 
@@ -8,8 +9,8 @@ INT_MIN = -2**32
 
 class Node:
 	# Constructor to create a new node
-	def __init__(self, data):
-		self.data = data
+	def __init__(self, val):
+		self.val = val
 		self.left = None
 		self.right = None
 
@@ -37,18 +38,18 @@ def maxPathSumUtil(root, res):
 	if root.left is not None and root.right is not None:
 
 		# update result if needed
-		res[0] = max(res[0], ls + rs + root.data)
+		res[0] = max(res[0], ls + rs + root.val)
 
 		# Return maximum possible value for root being
 		# on one side
-		return max(ls, rs) + root.data
+		return max(ls, rs) + root.val
 
 	# If any of the two children is empty, return
 	# root sum for root being on one side
 	if root.left is None:
-		return rs + root.data
+		return rs + root.val
 	else:
-		return ls + root.data
+		return ls + root.val
 
 # The main function which returns sum of the maximum
 # sum path betwee ntwo leaves. THis function mainly
@@ -74,8 +75,13 @@ root.right.right = Node(9)
 root.right.right.right = Node(0)
 root.right.right.right.left = Node(4)
 root.right.right.right.right = Node(-1)
+
 root.right.right.right.right.left = Node(10)
 
-print("Max pathSum of the given binary tree is" + str(maxPathSum(root)))
+print("Max pathSum of the given binary tree is " + str(maxPathSum(root)))
 
+# my_tree = build([10, 15, 19, 21, 20, 30, 14, 36, 5, 11, 9, 6, 2, 10, 7])
+my_tree = build([36, 21, 6, 15, 30, 11, 10, 10, 19, 20, 14, 5, 9, 2, 7])
+print(my_tree)
+print('max: ' + str(maxPathSum(my_tree)))
 # This code is contributed by Nikhil Kumar Singh(nickzuck_007)

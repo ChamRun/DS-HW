@@ -15,11 +15,11 @@ def is_bst(tree: Optional[Node], min_val, max_val):
 
 if __name__ == '__main__':
 
-    list_of_nodes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    list_of_nodes = [10, 5, 12, 3, 7, 11, 13, 2, 4, 6]
     my_tree = build(list_of_nodes)
 
     my_tree.pprint()
-    print(is_bst(my_tree, -10000, +10000))
+    print('is bst == ' + str(is_bst(my_tree, -10000, +10000)))
 
 
 
